@@ -21,7 +21,8 @@ public class OldSR {
             Thread.sleep(100);
             s2.start();
             s1.resume();
-            Thread.sleep(100);
+            //注释掉下面的代码时，很可能会造成主线程先执行s2,resume(),s2线程再执行suspend()
+            //Thread.sleep(100);
             s2.resume();
         } catch (InterruptedException e) {
             e.printStackTrace();
